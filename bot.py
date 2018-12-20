@@ -50,7 +50,7 @@ async def modhelp():
     await client.say("**__Připravujeme!__**")
 
 @client.command()
-async def helpfun()
+async def helpfun():
     await client.say("**__Připravujeme!__**")
 
 
