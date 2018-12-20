@@ -34,9 +34,9 @@ def owner(ctx):
 @client.command()
 async def help():
     embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
-    embed.add_field(name = "!ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)", inline = False)
-    embed.add_field(name = "!modhelp", value = "Ukáže ti pomoc pro moderátory! (připravuje se)", inline = False)
-    embed.add_field(name = "!helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme), inline = False)
+    embed.add_field(name = "!ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)",inline = False)
+    embed.add_field(name = "!modhelp", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
+    embed.add_field(name = "!helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
     embed.set_footer(text = "Bot vytvořen JustNela#6666")
     embed.set_image(url = "https://image.shutterstock.com/image-vector/help-bulb-word-cloud-collage-450w-415140307.jpg")
     await client.say(embed=embed)
