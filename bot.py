@@ -45,7 +45,7 @@ async def help():
     
     @client.command()
 async def ghelp():
-    embed = discord.Embed(title = "Pomoc!", color = 0x080000)
+    embed = discord.Embed(title = "Příkazy pro všechny!", color = 0x080000)
     embed.add_field(name = "S!invite", value = "Invitni bota i na tvůj server!",inline = False)
     embed.add_field(name = "S!support", value = "Pošle invite na SupportServer",inline = False)
     embed.set_footer(text = "Tyto příkazy může použít každý!")
