@@ -26,7 +26,7 @@ client.remove_command('help')
 @client.event
 async def on_ready():
     channel = discord.utils.get(client.get_all_channels(), name='🌎・hlavní-chat')
-    await client.change_presence(game=discord.Game(name= "Prefix: !"))
+    await client.change_presence(game=discord.Game(name= "Prefix: S!"))
     print("The bot is online and connected with Discord!") 
     await client.send_message(channel, "``Jsem tu a připraven!!``")
     
@@ -39,7 +39,7 @@ async def help():
     embed.add_field(name = "S!modhelp", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
     embed.add_field(name = "S!helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
     embed.add_field(name = "S!dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
-    embed.set_footer(text = "Bot vytvořen JustNela#6666")
+    embed.set_footer(text = "Bota vytvářejí JustVojta#6969 & JustNela")
     embed.set_image(url = "https://image.shutterstock.com/image-vector/help-bulb-word-cloud-collage-450w-415140307.jpg")
     await client.say(embed=embed)
     
@@ -89,9 +89,9 @@ async def clear(ctx, number):
 async def warn(ctx, userName: discord.User, *, message:str):
     
     embed = discord.Embed(color = 0xB22222, title = "User warned")
-    embed.add_field(name = "User Warned", value = "{0}".format(userName), inline=False)
-    embed.add_field(name = "Moderator", value = "{0}".format(ctx.message.author), inline=False)
-    embed.add_field(name = "Reason", value = "{0}".format(message), inline=False)
+    embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
+    embed.add_field(name = "Moderátor", value = "{0}".format(ctx.message.author), inline=False)
+    embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
  
     await client.say(embed=embed)
    
