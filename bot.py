@@ -71,7 +71,7 @@ async def clear(ctx, number):
        
     try:
         await client.delete_messages(mgs)          
-        await client.say(str(number)+' zpráv vymazáno <:sucess:525707476746633226>')
+        await client.say('<:sucess:525707476746633226>' str(number)+' zpráv vymazáno')
      
     except discord.Forbidden:
         await client.say(embed=Forbidden)
