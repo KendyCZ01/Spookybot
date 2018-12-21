@@ -67,13 +67,13 @@ async def clear(ctx, number):
        
     try:
         await client.delete_messages(mgs)          
-        await client.say(str(number)+' zpráv vymazáno <:sucess:525707476746633226>')
+        await client.say(str(number)+' zpráv vymazáno')
      
     except discord.Forbidden:
         await client.say(embed=Forbidden)
         return
     except discord.HTTPException:
-        await client.say('Něco se pokazilo <:failed:525709611559550976>')
+        await client.say('Něco se pokazilo')
         return         
    
  
@@ -95,5 +95,13 @@ async def warn(ctx, userName: discord.User, *, message:str):
 @commands.has_permissions(administrator=True)
 async def restart():
     await client.logout()
+    
+    @client.command()
+async def modhel():
+    embed = discord.Embed(title = "Pomoc Pro Moderátory!", color = 0x006400)
+    embed.add_field(name = "S!clear", value = "Smaže daný počet zpráv!",inline=False)
+    embed.add_field(name = "S!warn", value = "Varuje uživatele! Použití: S!warn @user Důvod",inline=False)
+    embed.set_footer(text = "Pouze pro AdminTeam!")
+    await client.say(embed=embed)
 
 client.run(os.getenv("BOT_TOKEN"))
