@@ -96,15 +96,4 @@ async def warn(ctx, userName: discord.User, *, message:str):
 async def restart():
     await client.logout()
     
-    async def info(ctx):
-    '''Displays Info About The Server!'''
-
-    server = ctx.message.server
-    roles = [x.name for x in server.role_hierarchy]
-    role_length = len(roles)
-
-    if role_length > 50: #Just in case there are too many roles...
-        roles = roles[:50]
-        roles.append('>>>> Displaying[50/%s] Roles'%len(roles))
-
 client.run(os.getenv("BOT_TOKEN"))
