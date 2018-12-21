@@ -45,7 +45,19 @@ async def help():
     
 @client.command()
 async def ghelp():
-    await client.say("**__Připravuje Se!__**")
+    embed = discord.Embed(title = "Pomoc pro normální uživatele!", color = 0x006400)
+    embed.add_field(name = "S!invite", value = "Pozvi mě na váš server!",inline=False)
+    embed.add_field(name = "S!support", value = "Pošle invite link na můj Support Server",inline=False)
+    embed.set_footer(text = "Pomoc pro všechny")
+    await client.say(embed=embed)
+    
+@client.command()
+async def invite():
+    await client.say("Pozvi mě na tvůj server! https://discordapp.com/api/oauth2/authorize?client_id=525022758120194057&permissions=8&scope=bot")
+    
+    @client.command()
+async def support():
+    await client.say("Připoj se na náš Support Server! https://discord.gg/SwyxEkU")
     
 @client.command()
 async def modhelp():
