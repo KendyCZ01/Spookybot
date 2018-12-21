@@ -21,7 +21,7 @@ client = commands.Bot(command_prefix = 'S!', case_insensitive=False)
 
 client.remove_command('help')
 
-async def status_task();
+async def status_task()
     while True:
         await client.change_presence(game=discord.Game(name='Devs: JustNela & Vojta'))
         await asyncio.sleep(3)
