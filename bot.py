@@ -96,8 +96,4 @@ async def warn(ctx, userName: discord.User, *, message:str):
 async def restart():
     await client.logout()
     
-    @client.command()
-async def monča():
-await client.say("**__Tu neznám :D__**")
-    
 client.run(os.getenv("BOT_TOKEN"))
