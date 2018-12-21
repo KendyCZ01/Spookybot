@@ -51,7 +51,7 @@ async def ghelp():
 async def modhelp():
     embed = discord.Embed(title = "Pomoc Pro Moderátory!", color = 0x006400)
     embed.add_field(name = "S!clear", value = "Smaže daný počet zpráv!",inline=False)
-    embed.set_footer(text = "Pomoc přivolána {0}!".format(message.author.name))
+    embed.set_footer(text = "Pomoc přivolána {0}!".format(ctx, message.author.name))
     await client.say(embed=embed)
 
 @client.command()
