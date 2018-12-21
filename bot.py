@@ -96,12 +96,4 @@ async def warn(ctx, userName: discord.User, *, message:str):
 async def restart():
     await client.logout()
     
-    @client.command()
-async def modhel():
-    embed = discord.Embed(title = "Pomoc Pro Moderátory!", color = 0x006400)
-    embed.add_field(name = "S!clear", value = "Smaže daný počet zpráv!",inline=False)
-    embed.add_field(name = "S!warn", value = "Varuje uživatele! Použití: S!warn @user Důvod",inline=False)
-    embed.set_footer(text = "Pouze pro AdminTeam!")
-    await client.say(embed=embed)
-
 client.run(os.getenv("BOT_TOKEN"))
