@@ -87,7 +87,7 @@ async def clear(ctx, number):
 @commands.has_permissions(manage_messages=True)
 
 async def warn(ctx, userName: discord.User, *, message:str):
-    channel = discord.utils.get(client.get_all_channels(), name='logs')
+    channel = discord.utils.get(client.get_all_channels(), name='🔨-logs-🔨')
     
     
     embed = discord.Embed(color = 0xB22222, title = "User warned")
