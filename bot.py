@@ -39,8 +39,16 @@ async def help():
     embed.add_field(name = "S!modhelp", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
     embed.add_field(name = "S!helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
     embed.add_field(name = "S!dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
-    embed.set_footer(text = "Bota vytvářejí JustVojta#6969 & JustNela")
+    embed.set_footer(text = "Bota vytvářejí JustVojta#6969 & JustNela#6666")
     embed.set_image(url = "http://www.pfpenergy.co.uk/media/1184/help-and-support.png")
+    await client.say(embed=embed)
+    
+    @client.command()
+async def ghelp():
+    embed = discord.Embed(title = "Pomoc!", color = 0x080000)
+    embed.add_field(name = "S!invite", value = "Invitni bota i na tvůj server!",inline = False)
+    embed.add_field(name = "S!support", value = "Pošle invite na SupportServer",inline = False)
+    embed.set_footer(text = "Tyto příkazy může použít každý!")
     await client.say(embed=embed)
     
 @client.command()
