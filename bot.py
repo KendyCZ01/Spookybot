@@ -50,7 +50,7 @@ async def ghelp():
     
 @client.command()
 async def modhelp():
-    embed = discord.Embed(url = "https://cdn.discordapp.com/attachments/468928524267290634/525662927529836574/f054ab37k2ny.gif", title = "Pomoc Pro Moderátory!", 0x006400)
+    embed = discord.Embed(title = "Pomoc Pro Moderátory!", 0x006400)
     embed.add_field(name = "S!clear", value = "Smaže daný počet zpráv!",inline=False)
     embed.set_footer(text = "Pomoc přivolána {0}!".format(message.author.name))
     await client.say(embed=embed)
