@@ -40,7 +40,7 @@ async def help():
     embed.add_field(name = "S!helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
     embed.add_field(name = "S!dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
     embed.set_footer(text = "Bota vytvářejí JustVojta#6969 & JustNela")
-    embed.set_image(url = "https://image.shutterstock.com/image-vector/help-bulb-word-cloud-collage-450w-415140307.jpg")
+    embed.set_image(url = "http://www.pfpenergy.co.uk/media/1184/help-and-support.png")
     await client.say(embed=embed)
     
 @client.command()
