@@ -43,14 +43,6 @@ async def help():
     embed.set_image(url = "http://www.pfpenergy.co.uk/media/1184/help-and-support.png")
     await client.say(embed=embed)
     
-    @client.command()
-async def ghelp():
-    embed = discord.Embed(title = "Příkazy pro všechny!", color = 0x00FF00)
-    embed.add_field(name = "S!invite", value = "Invitni bota i na tvůj server!",inline = False)
-    embed.add_field(name = "S!support", value = "Pošle invite na SupportServer",inline = False)
-    embed.set_footer(text = "Tyto příkazy může použít každý!")
-    await client.say(embed=embed)
-    
 @client.command()
 async def modhelp():
     embed = discord.Embed(title = "Pomoc Pro Moderátory!", color = 0x006400)
