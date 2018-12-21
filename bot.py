@@ -52,10 +52,6 @@ async def ghelp():
     await client.say(embed=embed)
     
 @client.command()
-async def ghelp():
-    await client.say("**__Připravujeme!__**")
-    
-@client.command()
 async def modhelp():
     embed = discord.Embed(title = "Pomoc Pro Moderátory!", color = 0x006400)
     embed.add_field(name = "S!clear", value = "Smaže daný počet zpráv!",inline=False)
