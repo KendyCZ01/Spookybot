@@ -30,8 +30,7 @@ async def on_ready():
     print("The bot is online and connected with Discord!") 
     await client.send_message(channel, "``Jsem tu a připraven!!``")
     
-def owner(ctx):
-    return ctx.message.author.id == "342364288310312970, 522048274689949712"
+
 
 @client.command()
 async def help():
@@ -84,7 +83,7 @@ async def clear(ctx, number):
     await client.delete_messages(mgs)      
 
 @client.command(pass_context = True)
-@commands.check(is_owner)
+@commands.has_permissions(administrator=True)
 async def restart():
     await client.logout()
 
