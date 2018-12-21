@@ -77,7 +77,7 @@ async def clear(ctx, number):
         await client.say(embed=Forbidden)
         return
     except discord.HTTPException:
-        await client.say('clear failed.')
+        await client.say('Něco se pokazilo <:failed:525709611559550976>')
         return         
    
  
