@@ -87,15 +87,13 @@ async def clear(ctx, number):
 @commands.has_permissions(manage_messages=True)
 
 async def warn(ctx, userName: discord.User, *, message:str):
-    channel = discord.utils.get(client.get_all_channels(), name='🔨-logs-🔨')
-    
     
     embed = discord.Embed(color = 0xB22222, title = "User warned")
     embed.add_field(name = "User Warned", value = "{0}".format(userName), inline=False)
     embed.add_field(name = "Moderator", value = "{0}".format(ctx.message.author), inline=False)
     embed.add_field(name = "Reason", value = "{0}".format(message), inline=False)
  
-    await client.send_message(channel, embed=embed)
+    await client.say(embed=embed)
    
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
