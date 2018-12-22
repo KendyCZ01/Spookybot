@@ -34,7 +34,6 @@ async def on_ready():
 
 @client.command()
 async def help():
-    channel = discord.utils.get(client.get_all_channels(), name='💩・botspam')
     embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
     embed.add_field(name = "Prefix:", value = "S!",inline=True)
     embed.add_field(name = "ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)",inline = False)
@@ -161,7 +160,6 @@ async def ban(ctx,user:discord.Member):
 
 @client.command()
 async def justnela():
-    channel = discord.utils.get(client.get_all_channels(), name='💩・botspam')
     embed = discord.Embed(title = "JustNela",icon_url = "https://cdn.discordapp.com/attachments/468928524267290634/525662927529836574/f054ab37k2ny.gif", color = 0x00FF00)
     embed.set_footer(text = "JustNela#6666 je milá ale i zlá mrcha xD")
     embed.add_field(name = "Info", value = "Info o JustNela",inline=False)
