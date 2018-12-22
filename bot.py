@@ -154,6 +154,7 @@ async def ban(ctx,user:discord.Member):
         embed.add_field(name = "Nezdařilo se!", value = "Ban se nepodařil!",inline=False)
         await client.say(embed=embed)
         return		 
+
 @client.command()
 async def JustNela():
     embed = discord.Embed(title = "Info o JustNela#6666", color = 0x00FF00)
