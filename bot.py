@@ -44,7 +44,7 @@ async def help():
     embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
     embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
     embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
-    await client.send_message(channel, embed=embed)
+    await client.say(embed=embed)
     
 @client.command()
 async def modhelp():
@@ -168,7 +168,7 @@ async def justnela():
     embed.add_field(name = "ID:", value = "342364288310312970",inline=False)
     embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
     
-    await client.send_message(channel, embed=embed)
+    await client.say(embed=embed)
    
 
 client.run(os.getenv("BOT_TOKEN"))
