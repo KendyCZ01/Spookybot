@@ -58,7 +58,7 @@ async def helpfun():
     await client.say("**__Připravujeme!__**")
     
 @client.command()
-@commands.check(is_owner)
+@commands.has_permissions(administrator=True)
 async def dev():
     embed = discord.Embed(title = "Developers Help!", color = 0x191970)
     embed.add_field(name = "S!restart", value = "Restartuje bota!", inline=False)
