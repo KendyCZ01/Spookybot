@@ -166,4 +166,31 @@ async def JustNela():
     embed.set_footer(text = "Tohoto bota udělala JustNela#6666 & JustVojta#6969!")
     await client.send_message(channel=channel, embed=embed)
     
+@client.command(pass_context = True)
+@commands.has_permissions(kick_members=True)
+
+async def announce(ctx, userName: discord.User, *, message:str):
+    channel = discord.utils.get(client.get_all_channels(), name='📰・novinky')
+    
+    embed = discord.Embed(
+        
+        title = "Succesful!",
+        description = """ __**Announce has been successfully made!**__"""
+        
+)
+    await client.delete_message(ctx.message)
+    await client.send_message(userName, embed=embed)
+ 
+
+    
+        
+        
+    await client.send_message(channel, """**New Announcement!**
+    __Announcement:__
+    
+    {0}
+    
+    __Announced by:__
+    ``{1}``""".format(message, ctx.message.author))
+    
 client.run(os.getenv("BOT_TOKEN"))
