@@ -171,8 +171,6 @@ async def justnela():
     embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
     
     await client.say(embed=embed)
-    
-@client.command(pass_context=True)
-async def suggest(ctx, *, msg=None):
+   
 
 client.run(os.getenv("BOT_TOKEN"))
