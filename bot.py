@@ -48,12 +48,21 @@ async def modhelp():
     embed = discord.Embed(title = "Pomoc Pro Moderátory!", color = 0x006400)
     embed.add_field(name = "S!clear", value = "Smaže daný počet zpráv!",inline=False)
     embed.add_field(name = "S!warn", value = "Varuje uživatele! Použití: S!warn @user Důvod",inline=False)
+    embed.add_field(name = "S!kick", value = "Vyhodí uživatele!",inline=False)
+    embed.add_field(name = "S!ban", value = "Banuje Uživatele!",inline=False)
     embed.set_footer(text = "Pouze pro AdminTeam!")
     await client.say(embed=embed)
 
 @client.command()
 async def helpfun():
     await client.say("**__Připravujeme!__**")
+    
+@client.command()
+@commands.check(is_owner)
+async def dev():
+    embed = discord.Embed(title = "Developers Help!", color = 0x191970)
+    embed.add_field(name = "S!restart", value = "Restartuje bota!", inline=False)
+    await client.say(embed=embed)
 
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages=True)  
@@ -96,4 +105,54 @@ async def warn(ctx, userName: discord.User, *, message:str):
 async def restart():
     await client.logout()
     
+@client.command(pass_context=True)  
+@commands.has_permissions(kick_members=True)     
+async def kick(ctx,user:discord.Member):
+
+    if user.server_permissions.kick_members:
+        embed1 = discord.Embed(title = "Error", color = 0xFFFF00)
+        embed1.add_field(name = "Denied!", value = "On/Ona je Mod/Admin a nemám pravomoc ho/ji kicknout!!",inline=False)
+        await client.say(embed=embed1)
+        return
+    
+    try:
+        embed2 = discord.Embed(title = "Povedli se!", color = 0x2E8B57)
+        embed2.add_field(name = "Povoleno!", value = user.name+" byl vyhozen!",inline=False)
+        await client.kick(user)
+        await client.say(embed=embed2)
+        await client.delete_message(ctx.message)
+
+    except discord.Forbidden:
+        embed3 = diwcird.Embed(title = "Permissions denied!", color = 0xA52A2A)
+        embed3.add_field(name = "Pravomoce Odebrány!", value = "Nemáš dostatečné pravomoce na tento příkaz!",inline=False)
+        await client.say(embed=embed3)
+        return
+
+@client.command(pass_context=True)  
+@commands.has_permissions(ban_members=True)      
+async def ban(ctx,user:discord.Member):
+
+    if user.server_permissions.ban_members:
+        embed3 = discord.Embed(title = "Denied!", color = 0xFFFF00)
+        embed3.add_field(name = "Denied!", value = "On/Ona je mod/Admin a nemam odvahu ho/ji zabanovat",inline=False)
+        await client.say(embed=embed3)
+        return
+
+    try:
+        embed2 = discord.Embed(title = "Povedlo se!", color = 0x2E8B57)
+        embed2.add_field(name = "Ban se povedl!", valie = user.name+" byl zabanován!",inline=False)
+        await client.ban(user)
+        await client.say(embed=embed2)
+
+    except discord.Forbidden:
+        embed1 = discord.Embed(title = "Permission denied!", color = 0xA52A2A)
+        embed1.add_field(name = "Permissions Error", value = "Nejspíše nemám práva na ban!",inline=False)
+        await client.say(embed=embed1)
+        return
+    except discord.HTTPException:
+        embed = discord.Embed(title = "Error!", color = 0xFFFF00)
+        embed.add_field(name = "Nezdařilo se!", value = "Ban se nepodařil!",inline=False)
+        await client.say(embed=embed)
+        return		 
+
 client.run(os.getenv("BOT_TOKEN"))
