@@ -34,6 +34,7 @@ async def on_ready():
 
 @client.command()
 async def help():
+    channel = discord.utils.get(client.get_all_channels(), name='💩・botspam')
     embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
     embed.add_field(name = "Prefix:", value = "S!",inline=True)
     embed.add_field(name = "ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)",inline = False)
@@ -46,7 +47,7 @@ async def help():
     embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
     embed.set_footer(text = "Bota vytvářejí JustVojta#6969 & JustNela#6666")
     embed.set_image(url = "http://www.pfpenergy.co.uk/media/1184/help-and-support.png")
-    await client.say(embed=embed)
+    await client.send_message(channel, embed=embed)
     
 @client.command()
 async def modhelp():
@@ -162,6 +163,7 @@ async def ban(ctx,user:discord.Member):
 
 @client.command()
 async def justnela():
+    channel = discord.utils.get(client.get_all_channels(), name='💩・botspam')
     embed = discord.Embed(title = "JustNela",icon_url = "https://cdn.discordapp.com/attachments/468928524267290634/525662927529836574/f054ab37k2ny.gif", color = 0x00FF00)
     embed.set_footer(text = "JustNela#6666 je milá ale i zlá mrcha xD")
     embed.add_field(name = "Info", value = " ",inline=False)
@@ -170,7 +172,7 @@ async def justnela():
     embed.add_field(name = "ID:", value = "342364288310312970",inline=False)
     embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
     
-    await client.say(embed=embed)
+    await client.send_message(channel, embed=embed)
    
 
 client.run(os.getenv("BOT_TOKEN"))
