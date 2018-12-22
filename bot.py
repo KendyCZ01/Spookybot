@@ -44,7 +44,7 @@ async def help(ctx):
     embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
     embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
     embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
-    embed.set_footer(text = "Použil tento cmd: {}".format(ctx.message.author.name))
+    embed.set_footer(text = "Na žádost hráče: {}".format(ctx.message.author.name))
                                                           
     await client.say(embed=embed)
     
