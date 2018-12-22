@@ -32,8 +32,8 @@ async def on_ready():
     
 
 
-@client.command()
-async def help():
+@client.command(pass_context=True)
+async def help(ctx):
     embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
     embed.add_field(name = "Prefix:", value = "S!",inline=True)
     embed.add_field(name = "ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)",inline = False)
@@ -44,6 +44,8 @@ async def help():
     embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
     embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
     embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
+    embed.set_footer(text = "Použil tento cmd: {}".format(ctx.message.autjor.name))
+                                                          
     await client.say(embed=embed)
     
 @client.command()
