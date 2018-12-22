@@ -157,14 +157,9 @@ async def ban(ctx,user:discord.Member):
 
 @client.command()
 async def justnela():
-    channel = discord.utils.get(client.get_all_channels(), name='💀・spam')
-    embed = discord.Embed(title = "Info o JustNela#6666", color = 0x00FF00)
-    embed.add_field(name = "Info", value = "",inline=False)
-    embed.add_field(name = "Jmeno:", value = "@JustNela#6666",inline=False)
-    embed.add_field(name = "Status", value = "Nejčastěji Online!",inline=False)
-    embed.add_field(name = "ID:", value = "342364288310312970",inline=False)
-    embed.set_footer(text = "Tohoto bota udělala JustNela#6666 & JustVojta#6969!")
-    await client.send_message(channel, embed=embed)
-    
+    embed = discord.Embed(description="Lol just test", color = 0x00FF00)
+    embed.set_author(name = "Test JustNely", icon_url = "https://cdn.discordapp.com/attachments/468928524267290634/525662927529836574/f054ab37k2ny.gif")
+    await client.say(embed=embed)
+
     
 client.run(os.getenv("BOT_TOKEN"))
