@@ -41,7 +41,7 @@ async def help():
     embed.add_field(name = "modhelp", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
     embed.add_field(name = "helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
     embed.add_field(name = "dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
-    embed.add_field(name = "Další Info", value = " ",inline=False)
+    embed.add_field(name = "Další Info", value = "Proc sem psat neco? vždiť je to uplně zbytečné xD",inline=False)
     embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
     embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
     embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
