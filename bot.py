@@ -160,8 +160,9 @@ async def ban(ctx,user:discord.Member):
 
 @client.command()
 async def justnela():
-    embed = discord.Embed(title = "JustNela",icon_url = "https://cdn.discordapp.com/attachments/468928524267290634/525662927529836574/f054ab37k2ny.gif", color = 0x00FF00)
+    embed = discord.Embed(title = "JustNela", color = 0x00FF00)
     embed.set_footer(text = "JustNela#6666 je milá ale i zlá mrcha xD")
+    embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/468928524267290634/525662927529836574/f054ab37k2ny.gif")
     embed.add_field(name = "Info", value = "Info o JustNela",inline=False)
     embed.add_field(name = "Jméno:", value = "JustNela",inline=False)
     embed.add_field(name = "Tag:", value = "#6666",inline=False)
