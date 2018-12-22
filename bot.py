@@ -45,8 +45,6 @@ async def help():
     embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
     embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
     embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
-    embed.set_footer(text = "Bota vytvářejí JustVojta#6969 & JustNela#6666")
-    embed.set_image(url = "http://www.pfpenergy.co.uk/media/1184/help-and-support.png")
     await client.send_message(channel, embed=embed)
     
 @client.command()
