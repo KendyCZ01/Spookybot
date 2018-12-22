@@ -164,6 +164,6 @@ async def JustNela():
     embed.add_field(name = "Status", value = "Nejčastěji Online!",inline=False)
     embed.add_field(name = "ID:", value = "342364288310312970",inline=False)
     embed.set_footer(text = "Tohoto bota udělala JustNela#6666 & JustVojta#6969!")
-    await client.send_message(channel, embed=embed)
+    await client.send_message(channel=channel, embed=embed)
     
 client.run(os.getenv("BOT_TOKEN"))
