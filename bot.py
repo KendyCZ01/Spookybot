@@ -158,10 +158,10 @@ async def ban(ctx,user:discord.Member):
 @client.command()
 async def JustNela():
     embed = discord.Embed(title = "Info o JustNela#6666", color = 0x00FF00)
-    embed.add_field(name = "Info", value = "",inline = False)
-    embed.add_field(name = "Jmeno:", value = "@JustNela#6666",inline = False)
-    embed.add_field(name = "Status", value = "Nejčastěji Online!",inline = False)
-    embed.add_field(name = "ID:", value = "342364288310312970",inline = False)
+    embed.add_field(name = "Info", value = "",inline=False)
+    embed.add_field(name = "Jmeno:", value = "@JustNela#6666",inline=False)
+    embed.add_field(name = "Status", value = "Nejčastěji Online!",inline=False)
+    embed.add_field(name = "ID:", value = "342364288310312970",inline=False)
     embed.set_footer(text = "Tohoto bota udělala JustNela#6666 & JustVojta#6969!")
     await client.say(embed=embed)
     
