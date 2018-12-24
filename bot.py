@@ -42,22 +42,12 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    embed = diecord.Embed(title = "SpookyBot!", icon_url="http://chittagongit.com//images/creepy-icon/creepy-icon-25.jpg")
+    embed = diecord.Embed(title = "SpookyBot!", icon_url="http://chittagongit.com//images/creepy-icon/creepy-icon-25.jpg", color = 0xFF00FF)
     embed.add_field(name = "Prefix:", value = "S!",inline=Flase)
     embed.add_field(name = "Support Server:", value = "https://discord.gg/pNWyc38",inline=False)
     if message.content.upper() == "SPOOKYBOT":
         await client.say(embed=embed)
 
-@client.event
-async def on_message(message):
-    channel = message.channel
-    #if message.author.id == "342364288310312970":
-        
-        
-    if message.content.upper() == "SUŠENKU":
-
-       
-            await client.send_message(channel, ":cookie:")
 
 @client.command(pass_context=True)
 async def help(ctx):
