@@ -41,7 +41,7 @@ async def on_ready():
      #  await client.say(embed=embed)
 
 @client.event
-async def on_message(message, ctx):
+async def on_message(message):
     channel = message.channel
     embed = discord.Embed(title = "SpookyBot!", icon_url="https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg", color = 0x5AD4A9)
     embed.add_field(name = "Prefix:", value = "S!",inline=False)
@@ -51,7 +51,7 @@ async def on_message(message, ctx):
     embed = discord.Embed(title="Důležité info!", color = 0x8AD2A6)
     embed.add_field(name = "Důležité:",value="Nic nemám :joy:",inline=False)
     embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg")
-    embed.set_footer(text="Na žádost {0}".format(ctx.message.author))
+
     if message.content.upper() == "DULEZITE INFO":
         await client.send_message(channel, embed=embed)
 
