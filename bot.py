@@ -30,7 +30,10 @@ async def on_ready():
     print("The bot is online and connected with Discord!") 
     await client.send_message(channel, "``Jsem tu a připraven!!``")
     
-
+@client.event
+async def on_message():
+    if message.content.startseith("@SpookyBot#2718")
+    await client.say("Můj prefix je ``S!``!")
 
 @client.command(pass_context=True)
 async def help(ctx):
