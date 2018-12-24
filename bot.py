@@ -77,7 +77,9 @@ async def on_message(message):
                                                           
         await client.send_message(user, embed=embed)
         await client.send_message(channel, odp1)
+    
     if message.content.upper() == "S!HELP MODERATION":
+        
         if "525379003079720970" in (role.id for role in message.author.roles):
                 embed = discord.Embed(title = "Pomoc Pro Moderátory!", color = 0x006400)
                 embed.add_field(name = "S!clear", value = "Smaže daný počet zpráv!",inline=False)
