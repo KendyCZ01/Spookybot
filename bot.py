@@ -172,6 +172,12 @@ async def justnela():
     embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
     
     await client.say(embed=embed)
-   
+
+
+@client.command()
+async def pick():
+    counter = client.counter = 0
+    awit bot.say(counter, "Lol")
+    bot.counter += 1
 
 client.run(os.getenv("BOT_TOKEN"))
