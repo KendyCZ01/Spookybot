@@ -177,7 +177,7 @@ async def justnela():
 @client.command()
 async def pick():
     counter = client.counter = 0
-    awit client.say(counter, "Lol")
+    await client.say(counter, "Lol")
     bot.counter += 1
 
 client.run(os.getenv("BOT_TOKEN"))
