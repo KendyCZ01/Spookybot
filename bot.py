@@ -43,7 +43,7 @@ async def on_message(message):
     #if message.author.id == "342364288310312970":
         
         
-        if message.content.upper() == "SUŠENKU":
+    if message.content.upper() == "SUŠENKU":
             a
        
             await client.send_message(channel, ":cookie:")
