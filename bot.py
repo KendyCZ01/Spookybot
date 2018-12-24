@@ -31,7 +31,7 @@ async def on_ready():
     await client.send_message(channel, "``Jsem tu a připraven!!``")
     
 @client.event
-async def on_message():
+async def on_message(message):
     if message.content.startseith("@SpookyBot#2718"):
        
         await client.say("Můj prefix je ``S!``!")
