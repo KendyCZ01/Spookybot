@@ -30,15 +30,23 @@ async def on_ready():
     print("The bot is online and connected with Discord!") 
     await client.send_message(channel, "``Jsem tu a připraven!!``")
     
+#@client.event
+#async def on_message(message):
+    #channel = message.channel
+   # if message.content.upper() == "SPOOKYBOT":
+        
+    #   embed = discord.Embed(title = "SpookyBot!")
+     #  embed.add_field(name = "Můj prefix je:",value="S!",inline=False)
+    
+     #  await client.say(embed=embed)
+
 @client.event
 async def on_message(message):
-    #channel = message.channel
+    embed = diecord.Embed(title = "SpookyBot!", icon_url="http://chittagongit.com//images/creepy-icon/creepy-icon-25.jpg")
+    embed.add_field(name = "Prefix:", value = "S!",inline=Flase)
+    embed.add_field(name = "Support Server:", value = "https://discord.gg/pNWyc38",inline=False)
     if message.content.upper() == "SPOOKYBOT":
-        
-       embed = discord.Embed(title = "SpookyBot!")
-       embed.add_field(name = "Můj prefix je:",value="S!",inline=False)
-    
-       await client.say(embed=embed)
+        await client.say(embed=embed)
 
 @client.event
 async def on_message(message):
