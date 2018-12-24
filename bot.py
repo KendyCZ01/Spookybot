@@ -83,7 +83,8 @@ async def on_message(message):
         embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
         embed.set_footer(text = "Na žádost hráče {}".format(message.author.name))
                                                           
-        await client.say(embed=embed)
+        await client.send_message(channel, embed=embed)
+        
     
                                       
 
