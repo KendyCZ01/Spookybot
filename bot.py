@@ -32,7 +32,7 @@ async def on_ready():
     
 @client.event
 async def on_message(message):
-    if message.content.startseith("@SpookyBot#2718"):
+    if message.content.startswith("@SpookyBot#2718"):
        
         await client.say("Můj prefix je ``S!``!")
 
