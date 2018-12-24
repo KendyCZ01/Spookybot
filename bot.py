@@ -43,6 +43,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = message.channel
+    user = message.author
     embed = discord.Embed(title = "SpookyBot!", icon_url="https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg", color = 0x5AD4A9)
     embed.add_field(name = "Prefix:", value = "S!",inline=False)
     embed.add_field(name = "Support Server:", value = "https://discord.gg/pNWyc38",inline=False)
@@ -53,7 +54,7 @@ async def on_message(message):
     embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg")
 
     if message.content.upper() == "DULEZITE INFO":
-        await client.send_message(channel, embed=embed)
+        await client.send_message(user, embed=embed)
 
 @client.command(pass_context=True)
 async def help(ctx):
