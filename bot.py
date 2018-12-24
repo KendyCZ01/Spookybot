@@ -43,7 +43,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = message.channel
-    embed = discord.Embed(title = "SpookyBot!", icon_url="http://chittagongit.com//images/creepy-icon/creepy-icon-25.jpg", color = 0xFF00FF)
+    embed = discord.Embed(title = "SpookyBot!", icon_url="https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg", color = 0x5AD4A9)
     embed.add_field(name = "Prefix:", value = "S!",inline=False)
     embed.add_field(name = "Support Server:", value = "https://discord.gg/pNWyc38",inline=False)
     if message.content.upper() == "SPOOKYBOT":
