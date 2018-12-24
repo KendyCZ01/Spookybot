@@ -56,6 +56,12 @@ async def on_message(message):
     if message.content.upper() == "DULEZITE INFO":
         await client.send_message(user, embed=embed)
         await client.send_message(message.channel, ":incoming_envelope: Podívej se do DM! :incoming_envelope:")
+    if message.content.upper() == "S!restart":
+        if message.author.id == "342364288310312970":
+            await client.logout()
+            await client.sned_message(message.channel, "Restartuji se. Počkejte chvíli.")
+        else:
+            await client.send_message(message.channel, "Nemáš dostatečné oprávnění!")
 
 @client.command(pass_context=True)
 async def help(ctx):
