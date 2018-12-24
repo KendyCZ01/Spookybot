@@ -50,7 +50,7 @@ async def on_message(message):
         await client.send_message(channel, embed=embed)
 
 @client.event
-async def on_message(message, ctx):
+async def on_message(message):
     
     channel = message.channel
     embed = discord.Embed(title="Důležité info!", color = 0x8AD2A6)
