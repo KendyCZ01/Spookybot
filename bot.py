@@ -49,6 +49,15 @@ async def on_message(message):
     if message.content.upper() == "SPOOKYBOT":
         await client.send_message(channel, embed=embed)
 
+@client.event
+async def on_message(message, ctx):
+    channel = message.channel
+    embed = discord.Embed(title="Důležité info!", color = 0x8AD2A6)
+    embed.add_field(name = "Důležité:",value="Nic nemám :joy:",inline=False)
+    embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg")
+    embed.set_footer(text="Na žádost {0}".format(ctx.message.author))
+    if message.content.upper() == "DULEZITE INFO":
+        await client.say(embed=embed)
 
 @client.command(pass_context=True)
 async def help(ctx):
