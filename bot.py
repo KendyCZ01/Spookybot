@@ -66,7 +66,7 @@ async def on_message(message):
         embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
         embed.add_field(name = "Prefix:", value = "S!",inline=True)
         embed.add_field(name = "ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)",inline = False)
-        embed.add_field(name = "help moderation", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
+        embed.add_field(name = "moderation help", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
         embed.add_field(name = "helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
         embed.add_field(name = "dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
         embed.add_field(name = "Dulezite Info", value = "Proc sem psat neco? vždiť je to uplně zbytečné xD __(Pouzijte bez prefixu!)__",inline=False)
@@ -78,7 +78,7 @@ async def on_message(message):
         await client.send_message(user, embed=embed)
         await client.send_message(channel, odp1)
     
-    if message.content.upper() == "S!HELP MODERATION":
+    if message.content.upper() == "S!MODERATION HELP":
         
         if "525379003079720970" in (role.id for role in message.author.roles):
                 embed = discord.Embed(title = "Pomoc Pro Moderátory!", color = 0x006400)
