@@ -32,9 +32,10 @@ async def on_ready():
     
 @client.event
 async def on_message(message):
+    channel = message.channel
     if message.content.startswith("@SpookyBot#2718"):
        
-        await client.say("Můj prefix je ``S!``!")
+        await client.send_message(channel, "Můj prefix je ``S!``!")
 
 @client.command(pass_context=True)
 async def help(ctx):
