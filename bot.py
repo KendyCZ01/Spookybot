@@ -63,7 +63,7 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, "Nemáš dostatečné oprávnění!")
     if message.content.upper() == "S!PRISTI UPDATE":
-        if message.author.id == "342364288310312971":
+        if "525379003079720970" in (role.id for role  message.author.roles):
             embed = discord.Embed(title = "Pristi update", color = 0x0FF00F)
             embed.add_field(name = "Pristi update bude o:", value = "ban/kick/fun prikazech!",inline=False)
             await client.send_message(user, embed=embed)
