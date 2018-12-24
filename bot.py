@@ -54,7 +54,7 @@ async def on_message(message):
     embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg")
 
     if message.content.upper() == "DULEZITE INFO":
-        await client.send_message(user, embed=embed, "#525371812884906014 pro navraceni se do chatu!")
+        await client.send_message("<#525371812884906014> pro navraceni se do chatu!", user, embed=embed)
         await client.send_message(message.channel, ":incoming_envelope: Podívej se do DM! {0} :incoming_envelope:".format(message.author.mention))
     if message.content.upper() == "S!restart":
         if message.author.id == "342364288310312970":
