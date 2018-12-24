@@ -63,30 +63,45 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, "Nemáš dostatečné oprávnění!")
     if message.content.upper() == "S!PRISTI UPDATE":
-        if "525379003079720971" in (role.id for role in message.author.roles):
+        if "525379003079720970" in (role.id for role in message.author.roles):
             embed = discord.Embed(title = "Pristi update", color = 0x0FF00F)
             embed.add_field(name = "Pristi update bude o:", value = "ban/kick/fun prikazech!",inline=False)
             await client.send_message(user, embed=embed)
             await client.send_message(message.channel, ":incoming_envelope: {} Podívej se do DM! :incoming_envelope:".format(message.author.mention))
         else:
             await client.send_message(message.channel, "Nejsi developer tohoto bota!")
+    if message.content.upper() == "S!HELP":
+        embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
+        embed.add_field(name = "Prefix:", value = "S!",inline=True)
+        embed.add_field(name = "ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)",inline = False)
+        embed.add_field(name = "modhelp", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
+        embed.add_field(name = "helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
+        embed.add_field(name = "dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
+        embed.add_field(name = "Další Info", value = "Proc sem psat neco? vždiť je to uplně zbytečné xD",inline=False)
+        embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
+        embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
+        embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
+        embed.set_footer(text = "Na žádost hráče {}".format(ctx.message.author.name))
+                                                          
+        await client.say(embed=embed)
+    
                                       
 
-@client.command(pass_context=True)
-async def help(ctx):
-    embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
-    embed.add_field(name = "Prefix:", value = "S!",inline=True)
-    embed.add_field(name = "ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)",inline = False)
-    embed.add_field(name = "modhelp", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
-    embed.add_field(name = "helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
-    embed.add_field(name = "dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
-    embed.add_field(name = "Další Info", value = "Proc sem psat neco? vždiť je to uplně zbytečné xD",inline=False)
-    embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
-    embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
-    embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
-    embed.set_footer(text = "Na žádost hráče {}".format(ctx.message.author.name))
+#@client.command(pass_context=True)
+#async def help(ctx):
+#    embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
+ #   embed.add_field(name = "Prefix:", value = "S!",inline=True)
+#    embed.add_field(name = "ghelp", value = "Ukáže Pomoc pro všechny! (připravuje se)",inline = False)
+ #   embed.add_field(name = "modhelp", value = "Ukáže ti pomoc pro moderátory! (připravuje se)",inline = False)
+#    embed.add_field(name = "helpfun", value = "Ukáže ti vtipné přikazy! (doděláváme)",inline = False)
+  #  embed.add_field(name = "dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
+ #   embed.add_field(name = "Další Info", value = "Proc sem psat neco? vždiť je to uplně zbytečné xD",inline=False)
+#    embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
+#    embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
+#    embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
+  #  embed.set_footer(text = "Na žádost hráče {}".format(ctx.message.author.name))
                                                           
-    await client.say(embed=embed)
+ #   await client.say(embed=embed)
     
 @client.command()
 async def modhelp():
