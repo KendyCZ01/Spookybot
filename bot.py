@@ -41,11 +41,12 @@ async def on_message(message):
 async def on_message(message):
     channel = message.channel
     if message.author.id == "342364288310312970":
-        ñ
+        
         
         if message.content.upper() == "SUŠENKU":
+            a
        
-        await client.send_message(channel, ":cookie:")
+            await client.send_message(channel, ":cookie:")
 
 @client.command(pass_context=True)
 async def help(ctx):
