@@ -40,7 +40,7 @@ async def on_message(message):
 @client.event
 async def on_message(message):
     channel = message.channel
-    if message.author.id == "342364288310312970":
+    #if message.author.id == "342364288310312970":
         
         
         if message.content.upper() == "SUŠENKU":
