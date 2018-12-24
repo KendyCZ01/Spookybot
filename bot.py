@@ -41,7 +41,7 @@ async def on_ready():
      #  await client.say(embed=embed)
 
 @client.event
-async def on_message(message):
+async def on_message(message, ctx):
     channel = message.channel
     embed = discord.Embed(title = "SpookyBot!", icon_url="https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg", color = 0x5AD4A9)
     embed.add_field(name = "Prefix:", value = "S!",inline=False)
