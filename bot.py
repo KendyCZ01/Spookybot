@@ -63,11 +63,11 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, "Nemáš dostatečné oprávnění!")
     if message.content.upper() == "S!PRISTI UPDATE":
-        if message.author.id == "342364288310312970":
+        if message.author.id == "342364288310312971":
             embed = discord.Embed(title = "Pristi update", color = 0x0FF00F)
             embed.add_field(name = "Pristi update bude o:", value = "ban/kick/fun prikazech!",inline=False)
             await client.send_message(user, embed=embed)
-            await client.send_message(message.channel, ":incoming_envelope: {} Podívej se do DM! :incoming_envelope".format(message.author.mention))
+            await client.send_message(message.channel, ":incoming_envelope: {} Podívej se do DM! :incoming_envelope:".format(message.author.mention))
         else:
             await client.send_message(message.channel, "Nejsi developer tohoto bota!")
                                       
