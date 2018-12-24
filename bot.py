@@ -17,7 +17,7 @@ from discord import Game, Embed, Color, Status, ChannelType
 
 
 
-client = commands.Bot(command_prefix = 'S!', case_insensitive=False)
+client = commands.Bot(command_prefix = 'S!', case_insensitive=True)
 
 client.remove_command('help')
 
@@ -32,10 +32,13 @@ async def on_ready():
     
 @client.event
 async def on_message(message):
-    channel = message.channel
+    #channel = message.channel
     if message.content.upper() == "SPOOKYBOT":
-       
-        await client.send_message(channel, "Můj prefix je ``S!``!")
+        
+       embed = discord.Embed(title = "SpookyBot!")
+       embed.add_field(name = "Můj prefix je:",value="S!",inline=False)
+    
+       await client.say(embed=embed)
 
 @client.event
 async def on_message(message):
@@ -44,7 +47,7 @@ async def on_message(message):
         
         
     if message.content.upper() == "SUŠENKU":
-            a
+
        
             await client.send_message(channel, ":cookie:")
 
