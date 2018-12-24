@@ -55,7 +55,7 @@ async def on_message(message):
 
     if message.content.upper() == "DULEZITE INFO":
         await client.send_message(user, embed=embed)
-        await client.send_message(message.channel, ":incoming_envelope: Podívej se do DM! :incoming_envelope:")
+        await client.send_message(message.channel, ":incoming_envelope: Podívej se do DM! {0.author.mention} :incoming_envelope:")
     if message.content.upper() == "S!restart":
         if message.author.id == "342364288310312970":
             await client.logout()
