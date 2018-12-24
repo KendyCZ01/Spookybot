@@ -48,7 +48,7 @@ async def on_message(message, ctx):
     embed.add_field(name = "Support Server:", value = "https://discord.gg/pNWyc38",inline=False)
     if message.content.upper() == "SPOOKYBOT":
         await client.send_message(channel, embed=embed)
-elif:
+else:
     embed = discord.Embed(title="Důležité info!", color = 0x8AD2A6)
     embed.add_field(name = "Důležité:",value="Nic nemám :joy:",inline=False)
     embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg")
