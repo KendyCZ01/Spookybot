@@ -37,6 +37,15 @@ async def on_message(message):
        
         await client.send_message(channel, "Můj prefix je ``S!``!")
 
+@client.event
+async def on_message(message):
+    channel = message.channel
+    if message.author.id == "342364288310312970":
+        then:
+        if message.content.upper() == "SUŠENKU":
+       
+        await client.send_message(channel, ":cookie:")
+
 @client.command(pass_context=True)
 async def help(ctx):
     embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
