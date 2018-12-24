@@ -55,6 +55,7 @@ async def on_message(message):
 
     if message.content.upper() == "DULEZITE INFO":
         await client.send_message(user, embed=embed)
+        await client.say(":incoming_envelope: Podívej se do DM! :incoming_envelope:")
 
 @client.command(pass_context=True)
 async def help(ctx):
