@@ -34,7 +34,6 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = message.channel
-    s = client.send_message
     r = random.choice
     mod = "525379003079720970"
     odp1 = ":incoming_envelope: {} Podívej se do DM! :smile: :incoming_envelope:".format(message.author.mention)
@@ -150,9 +149,9 @@ async def on_message(message):
             embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
             embed.add_field(name = "Moderátor", value = "{0}".format(message.author), inline=False)
             embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
-            await s(channel, embed=embed)
+            await send_message(channel, embed=embed)
         else:
-            await s(channel, odp2)
+            await send_message(channel, odp2)
 #----------------------------------------------
     #if message.content.upper() == "
  
