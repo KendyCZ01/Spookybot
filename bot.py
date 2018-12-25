@@ -155,13 +155,13 @@ async def on_message(message):
         
     
 
-@client.command(pass_context=True)
-@commands.has_permissions(managr_messages=True)
+@client.command(pass_context = True)
+@commands.has_permissions(manage_messages=True)
 async def warn(ctx):
     embed = discord.Embed(color = 0xB22222, title = "Varování")
            
     embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
-    embed.add_field(name = "Moderátor", value = "{0}".format(message.author), inline=False)
+    embed.add_field(name = "Moderátor", value = "{0}".format(ctx.message.author), inline=False)
     embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
     embed.set_thumbnail(url = user.avatar_url)
     await send_message(message.channel, embed=embed)
