@@ -134,9 +134,11 @@ async def on_message(message):
     if message.content.upper() == "S!RCOLOR":
         if "525379003079720970" in (role.id for role in message.author.roles):
             if discord.utils.get(ctx.message.server.roles, name="{}".format(role)) is None:
-        await client.send_message(channel, "Použití příkazu ``S!rcolor @(ROLENAME) #(HEX BARVA)``")
-        return
+                
+                await client.send_message(channel, "Použití příkazu ``S!rcolor @(ROLENAME) #(HEX BARVA)``")
+                return
     if value is None:
+        
         await client.send_message(channel, "Použij tento příkaz takhle: ``mv!rolecolor (ROLENAME) #(COLOUR)``")
         return
     else:
