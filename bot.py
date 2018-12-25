@@ -14,10 +14,10 @@ from discord import Game, Embed, Color, Status, ChannelType
 
 
 
+PREFIXES = ("S!", "s!", "!", "S", "s")
 
 
-
-client = commands.Bot(command_prefix = 'S!', case_insensitive=True)
+client = commands.Bot(command_prefix = PREFIXES, case_insensitive=True)
 
 client.remove_command('help')
 
