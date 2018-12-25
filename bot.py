@@ -159,15 +159,7 @@ async def on_message(message):
 #----------------------------------------------
     if message.content.upper() == "S!WARN":
         if "525379003079720970" in (role.id for role in message.author.roles):
-            embed = discord.Embed(color = 0xB22222, title = "Varování")
-           
-            embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
-            embed.add_field(name = "Moderátor", value = "{0}".format(message.author), inline=False)
-            embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
-            embed.set_thumbnail(url = user.avatar_url)
-            await send_message(channel, embed=embed)
-        else:
-            await send_message(channel, odp2)
+            
 #----------------------------------------------
    #if message.content.upper() == "S!
  
@@ -175,7 +167,19 @@ async def on_message(message):
         
     
 
-
+@client.command(pass_context=True)
+@commands.has_permissions(managr_messages=True)
+async def warn(ctx):
+    embed = discord.Embed(color = 0xB22222, title = "Varování")
+           
+    embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
+    embed.add_field(name = "Moderátor", value = "{0}".format(message.author), inline=False)
+    embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
+    embed.set_thumbnail(url = user.avatar_url)
+    await send_message(message.channel, embed=embed)
+else:
+    await send_message(message.channel, "Nejsi Moderátor/Nemáš ``manage messages`` pravomoc!")
+    
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages=True)  
 async def clear(ctx, number):
@@ -188,13 +192,13 @@ async def clear(ctx, number):
        
     try:
         await client.delete_messages(mgs)          
-        await client.say(str(number)+' zpráv vymazáno')
+        await client.send_message(channel, str(number)+' zpráv vymazáno')
      
     except discord.Forbidden:
         await client.say(embed=Forbidden)
         return
     except discord.HTTPException:
-        await client.say('Něco se pokazilo')
+        await client.send_message(message.channel, 'Něco se pokazilo')
         return         
    
  
