@@ -157,14 +157,18 @@ async def on_message(message):
 
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages=True)
-async def warn(ctx, userName: discord.User, *, message:str):
-    embed = discord.Embed(color = 0xB22222, title = "Varování")
-    embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
-    embed.add_field(name = "Moderátor", value = "{0}".format(ctx.message.author), inline=False)
-    embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
-    embed.set_thumbnail(url = user.avatar_url)
-    await send_message(ctx.message.channel, embed=embed)
 
+async def warn(ctx, userName: discord.User, *, message:str):
+    
+    
+    
+    embed = discord.Embed(color = 0xB22222, title = "Hráč byl varován!")
+    embed.add_field(name = "Člověk rován", value = "{0}".format(userName), inline=False)
+    embed.add_field(name = "Moderator", value = "{0}".format(ctx.message.author), inline=False)
+    embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
+ 
+    await client.send_message(message.channel, embed=embed)
+   
     
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages=True)  
