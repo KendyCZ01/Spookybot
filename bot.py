@@ -142,23 +142,11 @@ async def on_message(message):
             "100+%"]), value = ":white_check_mark:!", inline=False)
         await client.send_message(channel, embed=embed)
 #----------------------------------------------
-    if message.content.upper() == "S!WARN":
-        if "525379003079720970" in (role.id for role in message.author.roles):
-      #h
+    #if message.content.upper() == "S!WARN":
         
-        
-            embed = discord.Embed(color = 0xB22222, title = "Varování")
-           
-            embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
-            embed.add_field(name = "Moderátor", value = "{0}".format(message.author), inline=False)
-            embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
-            embed.set_thumbnail(url = user.avatar_url)
-            await send_message(channel, embed=embed)
-        else:
-            await send_message(channel, odp2)
 #----------------------------------------------
-    if message.content.upper() == "S!WARN":
-        if "525379003079720970" in (role.id for role in message.author.roles):
+    #if message.content.upper() == "S!WARN":
+        
             
 #----------------------------------------------
    #if message.content.upper() == "S!
