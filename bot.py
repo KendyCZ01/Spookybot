@@ -88,7 +88,7 @@ async def on_message(message):
 #----------------------------------------------
     if message.content.upper() == "S!DEV":
         if "525379003079720970" in (role.id for role in message.author.roles):
-            embed = discord.Embe(title = "Pomoc pro developery!", color = 0x3D5AFE)
+            embed = discord.Embed(title = "Pomoc pro developery!", color = 0x3D5AFE)
             embed.add_field(name = "S!restart", value = "Restartuje Bota!",inline=True)
             embed.add_field(name = "S!Pristi Update", value = "Ukáže ti další update!",inline=True)
 #----------------------------------------------
