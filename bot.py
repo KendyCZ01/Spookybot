@@ -91,6 +91,7 @@ async def on_message(message):
             embed = discord.Embed(title = "Pomoc pro developery!", color = 0x3D5AFE)
             embed.add_field(name = "S!restart", value = "Restartuje Bota!",inline=True)
             embed.add_field(name = "S!Pristi Update", value = "Ukáže ti další update!",inline=True)
+            await client.send_message(user, embed=embed)
 #----------------------------------------------
     if message.content.upper() == "S!MODERATION HELP":
         
