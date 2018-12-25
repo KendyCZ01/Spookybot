@@ -148,7 +148,7 @@ async def on_message(message):
             embed = discord.Embed(color = 0xB22222, title = "Varování")
            
             embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
-            embed.add_field(name = "Moderátor", value = "{0}".format(ctx.message.author), inline=False)
+            embed.add_field(name = "Moderátor", value = "{0}".format(message.author), inline=False)
             embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
             await s(channel, embed=embed)
         else:
