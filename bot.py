@@ -147,9 +147,7 @@ async def on_message(message):
         user = ctx.message.author
         await client.edit_role(ctx.message.server, role, color = discord.Color(int(colour, base=16)))
         await client.send_message(channrl, "Barva role {} byla změněná.".format(role))
-    else:
-        await client.send_message(channel, "Nejsi moderátor na Support serveru!")
-
+    
         
     
 
