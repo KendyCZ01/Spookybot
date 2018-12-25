@@ -165,8 +165,7 @@ async def warn(ctx):
     embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
     embed.set_thumbnail(url = user.avatar_url)
     await send_message(message.channel, embed=embed)
-else:
-    await send_message(message.channel, "Nejsi Moderátor/Nemáš ``manage messages`` pravomoc!")
+
     
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages=True)  
