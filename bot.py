@@ -125,33 +125,7 @@ async def on_message(message):
         embed.set_footer(text="Přivolal si mě ty ({})".format(message.author.name))
         await client.send_message(user, embed=embed)
 #----------------------------------------------
-    if message.content.upper() == "S!LASKA":
-        embed = discord.Embed(title = "Laska metr", color = 0xF06292)
-        embed.add_field(name = "Laska {} k".format(message.author.name), value="{}".format(message),inline=False)
-        embed.add_field(name = random.choice([
-            "1 - 10%",
-            "11 - 20%",
-            "21 - 30%",
-            "31 - 40%",
-            "41 - 50%",
-            "51 - 60%",
-            "61 - 70%",
-            "71 - 80%",
-            "81 - 90%",
-            "91 - 100%",
-            "100+%"]), value = ":white_check_mark:!", inline=False)
-        await client.send_message(channel, embed=embed)
-#----------------------------------------------
-    #if message.content.upper() == "S!WARN":
-        
-#----------------------------------------------
-    #if message.content.upper() == "S!WARN":
-        
-            
-#----------------------------------------------
-   #if message.content.upper() == "S!
- 
-                        
+    
         
     
 
