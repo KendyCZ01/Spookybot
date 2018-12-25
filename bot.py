@@ -137,10 +137,7 @@ async def on_message(message):
                 
                 await client.send_message(channel, "Použití příkazu ``S!rcolor @(ROLENAME) #(HEX BARVA)``")
                 return
-    if value is None:
-        
-        await client.send_message(channel, "Použij tento příkaz takhle: ``mv!rolecolor (ROLENAME) #(COLOUR)``")
-        return
+    
     else:
         new_val = value.replace("#", "")
         colour = '0x' + new_val
