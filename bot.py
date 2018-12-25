@@ -58,7 +58,7 @@ async def on_message(message):
     if message.content.upper() == "S!PRISTI UPDATE":
         if "525379003079720970" in (role.id for role in message.author.roles):
             embed = discord.Embed(title = "Pristi update", color = 0x0FF00F)
-            embed.add_field(name = "Pristi update bude o:", value = "ban/kick/fun prikazech!",inline=False)
+            embed.add_field(name = "Pristi update bude o:", value = "``ban/kick/fun`` prikazech! a ``rcolor`` rcolor = rolecolor a budete si moct menit barvy role pomocí hex barv (#00FF00 atd...)",inline=False)
             await client.send_message(user, embed=embed)
             await client.send_message(message.channel, ":incoming_envelope: {} Podívej se do DM! :incoming_envelope:".format(message.author.mention))
         else:
