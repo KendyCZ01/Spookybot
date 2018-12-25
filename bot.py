@@ -87,7 +87,7 @@ async def on_message(message):
         await client.send_message(channel, odp1)
 #----------------------------------------------
     if message.content.upper() == "S!DEV":
-        if "525379003079720970" in (role.fi for role in message.author.roles):
+        if "525379003079720970" in (role.id for role in message.author.roles):
             embed.add_field(name = "S!restart", value = "Restartuje Bota!",inline=True)
             embed.add_field(name = "S!Pristi Update", value = "Ukáže ti další update!",inline=True)
 #----------------------------------------------
