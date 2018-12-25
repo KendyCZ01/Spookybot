@@ -14,10 +14,10 @@ from discord import Game, Embed, Color, Status, ChannelType
 
 
 
-PREFIXES = ("S!", "s!", "!", "S", "s")
 
 
-client = commands.Bot(command_prefix = PREFIXES, case_insensitive=True)
+
+client = commands.Bot(command_prefix = "S!", case_insensitive=True)
 
 client.remove_command('help')
 
@@ -26,7 +26,7 @@ client.remove_command('help')
 @client.event
 async def on_ready():
     channel = discord.utils.get(client.get_all_channels(), name='🌎・hlavní-chat')
-    await client.change_presence(game=discord.Game(name= "Prefix: S!"))
+    await client.change_presence(game=discord.Game(name= "Prefix: S!, s!"))
     print("The bot is online and connected with Discord!") 
     await client.send_message(channel, "``Jsem tu a připraven!!``")
     
@@ -93,6 +93,18 @@ async def on_message(message):
                 await client.sned_message(channel, ":incoming_envelope: {} Podívej se do DM! :smile: :incoming_envelope:".format(message.author.mention))
         else:
             await client.send_message(channel, "Nejsi moderátorem a nemáš pravomoce!")
+    if message.content.upper() == "S!JUSTNELA":
+            embed = discord.Embed(title = "JustNela", color = 0x00FF00)
+            embed.set_footer(text = "JustNela#6666 je milá ale i zlá mrcha xD")
+            embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/468928524267290634/525662927529836574/f054ab37k2ny.gif")
+            embed.add_field(name = "Info", value = "Info o JustNela",inline=False)
+            embed.add_field(name = "Jméno:", value = "JustNela",inline=False)
+            embed.add_field(name = "Tag:", value = "#6666",inline=False)
+            embed.add_field(name = "ID:", value = "342364288310312970",inline=False)
+            embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
+            await client.send_message(channel, odp1)
+            await client.send_message(user, embed=embed)
+     
         
     
 
@@ -200,15 +212,7 @@ async def ban(ctx,user:discord.Member):
 
 @client.command()
 async def justnela():
-    embed = discord.Embed(title = "JustNela", color = 0x00FF00)
-    embed.set_footer(text = "JustNela#6666 je milá ale i zlá mrcha xD")
-    embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/468928524267290634/525662927529836574/f054ab37k2ny.gif")
-    embed.add_field(name = "Info", value = "Info o JustNela",inline=False)
-    embed.add_field(name = "Jméno:", value = "JustNela",inline=False)
-    embed.add_field(name = "Tag:", value = "#6666",inline=False)
-    embed.add_field(name = "ID:", value = "342364288310312970",inline=False)
-    embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
-    
+
     await client.say(embed=embed)
 
 global counter
