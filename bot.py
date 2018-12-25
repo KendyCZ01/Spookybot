@@ -17,7 +17,7 @@ from discord import Game, Embed, Color, Status, ChannelType
 
 
 
-client = commands.Bot(command_prefix = "S!", case_insensitive=True)
+client = commands.Bot(command_prefix = "S!")
 
 client.remove_command('help')
 
