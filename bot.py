@@ -131,22 +131,24 @@ async def on_message(message):
         embed.set_footer(text="Přivolal si mě ty ({})".format(message.author.name))
         await client.send_message(user, embed=embed)
 #----------------------------------------------
-    if message.content.upper() == "S!RCOLOR":
-        if "525379003079720970" in (role.id for role in message.author.roles):
-            if discord.utils.get(message.server.roles, name="{}".format(role)) is None:
-                
-                await client.send_message(channel, "Použití příkazu ``S!rcolor @(ROLENAME) #(HEX BARVA)``")
-                return
     
+        
+@client.command(pass_context = True)
+@commands.has_permissions(manage_roles=True)
+async def rolecolor(ctx, role:discord.Role=None, value:str=None):
+    if discord.utils.get(ctx.message.server.roles, name="{}".format(role)) is None:
+        await client.say("Použití příkazu ``S!rcolor @(ROLENAME) #(HEX BARVA)``")
+        return
+    if value is None:
+        await client.say("Použití příkazu ``S!rcolor @(ROLENAME) #(HEX BARVA)``")
+        return
     else:
         new_val = value.replace("#", "")
         colour = '0x' + new_val
         user = ctx.message.author
-        await client.edit_role(message.server, role, color = discord.Color(int(colour, base=16)))
-        await client.send_message(channrl, "Barva role {} byla změněná.".format(role))
-    
-        
-    
+        await client.edit_role(ctx.message.server, role, color = discord.Color(int(colour, base=16)))
+        await client.say("Barva role {} byla změněna!.".format(role))
+
 
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages=True)
