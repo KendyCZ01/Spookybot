@@ -126,7 +126,7 @@ async def on_message(message):
             "81 - 90%",
             "91 - 100%",
             "100+%"]), value = ":white_check_mark:!", inline=False)
-        await s(channel, embed=embed)
+        await client.send_message(channel, embed=embed)
     #
                         
         
