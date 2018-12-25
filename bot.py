@@ -54,7 +54,7 @@ async def on_message(message):
         await client.send_message(message.channel, ":incoming_envelope: Podívej se do DM! {0} :incoming_envelope:".format(message.author.mention))
 #----------------------------------------------
     if message.content.upper() == "S!restart":
-        if message.author.id == "342364288310312970":
+        if "525379003079720970" in (role.id for role in message.author.roles):
             await client.logout()
             await client.sned_message(message.channel, "Restartuji se. Počkejte chvíli.")
         else:
