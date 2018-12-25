@@ -38,6 +38,7 @@ async def on_message(message):
     mod = "525379003079720970"
     odp1 = ":incoming_envelope: {} Podívej se do DM! :smile: :incoming_envelope:".format(message.author.mention)
     odp2 = "Nejsi moderátorem a nemáš pravomoce!"
+    devodp = "Nejsi developer tohoto bota!"
     user = message.author
     embed = discord.Embed(title = "SpookyBot!", icon_url="https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg", color = 0x5AD4A9)
     embed.add_field(name = "Prefix:", value = "S!",inline=False)
@@ -92,6 +93,9 @@ async def on_message(message):
             embed.add_field(name = "S!restart", value = "Restartuje Bota!",inline=True)
             embed.add_field(name = "S!Pristi Update", value = "Ukáže ti další update!",inline=True)
             await client.send_message(user, embed=embed)
+            await client.send_message(channel, odp1)
+        else:
+            await client.send_message(channel, devodp)
 #----------------------------------------------
     if message.content.upper() == "S!MODERATION HELP":
         
@@ -139,7 +143,7 @@ async def warn(ctx, userName: discord.User, *, message:str):
     
     
     embed = discord.Embed(color = 0xB22222, title = "Hráč byl varován!")
-    embed.add_field(name = "Člověk rován", value = "{0}".format(userName), inline=False)
+    embed.add_field(name = "Člověk varován", value = "{0}".format(userName), inline=False)
     embed.add_field(name = "Moderator", value = "{0}".format(ctx.message.author), inline=False)
     embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
  
