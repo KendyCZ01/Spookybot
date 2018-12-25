@@ -87,7 +87,7 @@ async def on_message(message):
                 embed.add_field(name = "S!warn", value = "Varuje uživatele! Použití: S!warn @user Důvod",inline=False)
                 embed.add_field(name = "S!kick", value = "Vyhodí uživatele!",inline=False)
                 embed.add_field(name = "S!ban", value = "Banuje Uživatele!",inline=False)
-                embed.set_footer(text = "Použito hráčem: {}".format(message.mauthor.name))
+                embed.set_footer(text = "Použito hráčem: {}".format(message.author.name))
                 
                 await client.send_message(user, embed=embed)
                 await client.sned_message(channel, ":incoming_envelope: {} Podívej se do DM! :smile: :incoming_envelope:".format(message.author.mention))
