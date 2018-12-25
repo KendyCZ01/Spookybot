@@ -36,27 +36,31 @@ async def on_message(message):
     channel = message.channel
     s = client.send_message
     r = random.choice
+    mod = "525379003079720970"
     odp1 = ":incoming_envelope: {} Podívej se do DM! :smile: :incoming_envelope:".format(message.author.mention)
     odp2 = "Nejsi moderátorem a nemáš pravomoce!"
     user = message.author
     embed = discord.Embed(title = "SpookyBot!", icon_url="https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg", color = 0x5AD4A9)
     embed.add_field(name = "Prefix:", value = "S!",inline=False)
     embed.add_field(name = "Support Server:", value = "https://discord.gg/pNWyc38",inline=False)
+#----------------------------------------------
     if message.content.upper() == "SPOOKYBOT":
         await client.send_message(channel, embed=embed)
     embed = discord.Embed(title="Důležité info!", color = 0x8AD2A6)
     embed.add_field(name = "Důležité:",value="Nic nemám :joy:",inline=False)
     embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/514801364526825474/526861094182977540/creepy-icon-25.jpg")
-
+#----------------------------------------------
     if message.content.upper() == "DULEZITE INFO":
         await client.send_message(user, "<#525371812884906014> pro navraceni se do chatu!", embed=embed)
         await client.send_message(message.channel, ":incoming_envelope: Podívej se do DM! {0} :incoming_envelope:".format(message.author.mention))
+#----------------------------------------------
     if message.content.upper() == "S!restart":
         if message.author.id == "342364288310312970":
             await client.logout()
             await client.sned_message(message.channel, "Restartuji se. Počkejte chvíli.")
         else:
             await client.send_message(message.channel, "Nemáš dostatečné oprávnění!")
+#----------------------------------------------
     if message.content.upper() == "S!PRISTI UPDATE":
         if "525379003079720970" in (role.id for role in message.author.roles):
             embed = discord.Embed(title = "Pristi update", color = 0x0FF00F)
@@ -65,6 +69,7 @@ async def on_message(message):
             await client.send_message(message.channel, ":incoming_envelope: {} Podívej se do DM! :incoming_envelope:".format(message.author.mention))
         else:
             await client.send_message(message.channel, "Nejsi developer tohoto bota!")
+#----------------------------------------------
     if message.content.upper() == "S!HELP":
         embed = discord.Embed(title = "Pomoc!", color = 0x00FF00)
         embed.add_field(name = "Prefix:", value = "S!",inline=True)
@@ -74,13 +79,19 @@ async def on_message(message):
         embed.add_field(name = "dev", value = "Ukáže pomoc pro developery! (jen pro developery!)",inline = False)
         embed.add_field(name = "Dulezite Info", value = "Proc sem psat neco? vždiť je to uplně zbytečné xD __(Pouzijte bez prefixu!)__",inline=False)
         embed.add_field(name = "justnela", value = "Ukáže Info o JustNela!",inline=True)
-        embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline =True)
-        embed.add_field(name = "support", value = "Dá ti invite na support!",inline=False)
+        embed.add_field(name = "justvojta", value = "Ukáže Info o JustVojta!",inline=False)
+        embed.add_field(name = "spookybot", value = "Dá ti invite na support!(POUZIJTE BEZ PREFIXU)",inline=False)
+        embed.add_field(name = "dulezite info", value = "Da ti dulezite info!",inline=False)
         embed.set_footer(text = "Na žádost hráče {}".format(message.author.name))
                                                           
         await client.send_message(user, embed=embed)
         await client.send_message(channel, odp1)
-    
+#----------------------------------------------
+    if message.content.upper() == "S!DEV":
+        if "525379003079720970" in (role.fi for role in message.author.roles):
+            embed.add_field(name = "S!restart", value = "Restartuje Bota!",inline=True)
+            embed.add_field(name = "S!Pristi Update", value = "Ukáže ti další update!",inline=True)
+#----------------------------------------------
     if message.content.upper() == "S!MODERATION HELP":
         
         if "525379003079720970" in (role.id for role in message.author.roles):
@@ -95,6 +106,7 @@ async def on_message(message):
                 await client.sned_message(channel, ":incoming_envelope: {} Podívej se do DM! :smile: :incoming_envelope:".format(message.author.mention))
         else:
             await client.send_message(channel, "Nejsi moderátorem a nemáš pravomoce!")
+#----------------------------------------------
     if message.content.upper() == "S!JUSTNELA":
             embed = discord.Embed(title = "JustNela", color = 0x00FF00)
             embed.set_footer(text = "JustNela#6666 je milá ale i zlá mrcha xD")
@@ -106,11 +118,13 @@ async def on_message(message):
             embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
             await client.send_message(channel, odp1)
             await client.send_message(user, embed=embed)
+#----------------------------------------------
     if message.content.upper() == "S!HELP FUN":
         embed = discord.Embed(title = "Fun Příkazy!", color = 0xFFFF00)
         embed.add_field(name = "S!LASKA",value = "Ukáže jak moc danou/daného věc/člověka miluješ",inline=False)
         embed.set_footer(text="Přivolal si mě ty ({})".format(message.author.name))
         await client.send_message(user, embed=embed)
+#----------------------------------------------
     if message.content.upper() == "S!LASKA":
         embed = discord.Embed(title = "Laska metr", color = 0xF06292)
         embed.add_field(name = "Laska {} k".format(message.author.name), value="{}".format(message),inline=False)
@@ -127,21 +141,25 @@ async def on_message(message):
             "91 - 100%",
             "100+%"]), value = ":white_check_mark:!", inline=False)
         await client.send_message(channel, embed=embed)
-    #
+#----------------------------------------------
+    if message.content.upper() == "S!WARN":
+        if mod in (role.id for role in message.author.roles):
+            
+            embed = discord.Embed(color = 0xB22222, title = "Varování")
+           
+            embed.add_field(name = "Hráč", value = "{0}".format(userName), inline=False)
+            embed.add_field(name = "Moderátor", value = "{0}".format(ctx.message.author), inline=False)
+            embed.add_field(name = "Důvod", value = "{0}".format(message), inline=False)
+            await s(channel, embed=embed)
+        else:
+            await s(channel, odp2)
+#----------------------------------------------
+    #if message.content.upper() == "
+ 
                         
         
     
 
-@client.command()
-async def helpfun():
-    await client.say("**__Připravujeme!__**")
-    
-@client.command()
-@commands.has_permissions(administrator=True)
-async def dev():
-    embed = discord.Embed(title = "Developers Help!", color = 0x191970)
-    embed.add_field(name = "S!restart", value = "Restartuje bota!", inline=False)
-    await client.say(embed=embed)
 
 @client.command(pass_context = True)
 @commands.has_permissions(manage_messages=True)  
