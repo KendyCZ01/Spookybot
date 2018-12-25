@@ -34,6 +34,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = message.channel
+    s = client.send_message
+    r = random.choice([
     odp1 = ":incoming_envelope: {} Podívej se do DM! :smile: :incoming_envelope:".format(message.author.mention)
     odp2 = "Nejsi moderátorem a nemáš pravomoce!"
     user = message.author
@@ -104,7 +106,29 @@ async def on_message(message):
             embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
             await client.send_message(channel, odp1)
             await client.send_message(user, embed=embed)
-     
+    if message.content.upper() == "S!HELP FUN":
+        embed = discord.Embed(title = "Fun Příkazy!", color = 0xFFFF00)
+        embed.add_field(name = "S!LASKA",value = "Ukáže jak moc danou/daného věc/člověka miluješ",inline=False)
+        embed.set_footer(text="Přivolal si mě ty ({})".format(message.author.name))
+        await client.send_message(user, embed=embed)
+    if message.content.upper() == "S!LASKA":
+        embed = discord.Embed(title = "Laska metr", color = 0xF06292)
+        embed.add_field(name = "Laska {1} k".format(message.author.name), value="{}".format(message),inline=False)
+        embed.add_field(name = random.choice([
+            "1 - 10%",
+            "11 - 20%",
+            "21 - 30%",
+            "31 - 40%",
+            "41 - 50%",
+            "51 - 60%",
+            "61 - 70%",
+            "71 - 80%",
+            "81 - 90%",
+            "91 - 100%",
+            "100+%"]), value = ":white_check_mark:!", inline=False)
+        await s(channel, embed=embed)
+    #
+                        
         
     
 
