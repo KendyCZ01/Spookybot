@@ -35,7 +35,7 @@ async def on_ready():
 async def on_message(message):
     channel = message.channel
     s = client.send_message
-    r = random.choice([
+    r = random.choice
     odp1 = ":incoming_envelope: {} Podívej se do DM! :smile: :incoming_envelope:".format(message.author.mention)
     odp2 = "Nejsi moderátorem a nemáš pravomoce!"
     user = message.author
