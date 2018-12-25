@@ -133,7 +133,7 @@ async def on_message(message):
 #----------------------------------------------
     if message.content.upper() == "S!RCOLOR":
         if "525379003079720970" in (role.id for role in message.author.roles):
-            if discord.utils.get(ctx.message.server.roles, name="{}".format(role)) is None:
+            if discord.utils.get(message.server.roles, name="{}".format(role)) is None:
                 
                 await client.send_message(channel, "Použití příkazu ``S!rcolor @(ROLENAME) #(HEX BARVA)``")
                 return
@@ -145,7 +145,7 @@ async def on_message(message):
         new_val = value.replace("#", "")
         colour = '0x' + new_val
         user = ctx.message.author
-        await client.edit_role(ctx.message.server, role, color = discord.Color(int(colour, base=16)))
+        await client.edit_role(message.server, role, color = discord.Color(int(colour, base=16)))
         await client.send_message(channrl, "Barva role {} byla změněná.".format(role))
     
         
