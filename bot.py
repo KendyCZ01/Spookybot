@@ -113,7 +113,7 @@ async def on_message(message):
         await client.send_message(user, embed=embed)
     if message.content.upper() == "S!LASKA":
         embed = discord.Embed(title = "Laska metr", color = 0xF06292)
-        embed.add_field(name = "Laska {1} k".format(message.author.name), value="{}".format(message),inline=False)
+        embed.add_field(name = "Laska {} k".format(message.author.name), value="{}".format(message),inline=False)
         embed.add_field(name = random.choice([
             "1 - 10%",
             "11 - 20%",
