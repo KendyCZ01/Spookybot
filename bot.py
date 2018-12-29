@@ -125,6 +125,18 @@ async def on_message(message):
             await client.send_message(channel, odp1)
             await client.send_message(user, embed=embed)
 #----------------------------------------------
+    if message.content.upper() == "S!JUSTVOJTA":
+            embed = discord.Embed(title = "JustVojta", color = 0x00FF00)
+            embed.set_footer(text = "Vojta rád pomáhá xD")
+            embed.set_thumbnail(url = "https://cdn.discordapp.com/avatars/522048274689949712/a_8e3176a1fa59aeb2c64da36dfc815402.gif")
+            embed.add_field(name = "Info", value = "Info o JustVojta",inline=False)
+            embed.add_field(name = "Jméno:", value = "JustVojta",inline=False)
+            embed.add_field(name = "Tag:", value = "#6969",inline=False)
+            embed.add_field(name = "ID:", value = "522048274689949712",inline=False)
+            embed.add_field(name = "Status:", value = "Nejčastěji Online!",inline=False)
+            await client.send_message(channel, odp1)
+            await client.send_message(user, embed=embed)
+#----------------------------------------------   
     if message.content.upper() == "S!HELP FUN":
         embed = discord.Embed(title = "Fun Příkazy!", color = 0xFFFF00)
         embed.add_field(name = "S!LASKA",value = "Ukáže jak moc danou/daného věc/člověka miluješ",inline=False)
