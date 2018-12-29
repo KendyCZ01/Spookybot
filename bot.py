@@ -25,10 +25,10 @@ client.remove_command('help')
 
 @client.event
 async def on_ready():
-    channel = discord.utils.get(client.get_all_channels(), name='🌎・hlavní-chat')
+    channel = discord.utils.get(client.get_all_channels(), name='📃・log')
     await client.change_presence(game=discord.Game(name= "Prefix: S!, s!"))
     print("The bot is online and connected with Discord!") 
-    await client.send_message(channel, "``Jsem tu a připraven!!``")
+    await client.send_message(channel, ":a_sucess: **Update nahrán** :thumbsup:")
     
 
 @client.event
